@@ -27,7 +27,7 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 {
 	//Declaracion de variables
 	FILE* fpdic;
-	char szpalabras[NUMPALABRAS][TAMTOKEN], cauxpala[TAMTOKEN];
+	char szpalabras[NUMPALABRAS][TAMTOKEN], cauxpala[TAMTOKEN], cauxpala2[TAMTOKEN];
 	int i, i2, iauxletras, iband, iconta, icontapala, icontaesta, icmp, idoc, isalta, isig, ilon, iletras, iestadisticas[NUMPALABRAS];
 
 	idoc = fopen_s(&fpdic, szNombre, "r");//Apertura
@@ -74,8 +74,19 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 			{
 				while (cauxpala[iconta] != ' ')
 				{
-					szpalabras[i][iconta] = cauxpala[iconta];
+					cauxpala2[iconta] = cauxpala[iconta];
 					iconta++;
+				}
+				if (cauxpala[iconta] != ' ')
+				{
+					i++;
+				}
+				for ( icontapala = 0; icontapala < i2; icontapala++)
+				{
+					if (strcmp(szpalabras[icontapala], cauxpala2) == 0)
+					{
+						iestadisticas[icontapala]++;
+					}
 				}
 			}
 		}
