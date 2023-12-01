@@ -114,16 +114,6 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 		//Cierre
 		fclose(fpdic);//Cierre de archivo
 		
-		//Repeticion
-		for (icontapala = 0; icontapala <= i2; icontapala++)
-		{
-			if (strcmp(szpalabras[icontapala], szpalabras[icontapala + 1]) == 0 )
-			{
-				strcpy_s(szpalabras[icontapala+2], TAMTOKEN, szpalabras[icontapala+1]);
-				szpalabras[icontapala][TAMTOKEN] = '\0';
-				iestadisticas[icontapala+1]++;
-			}
-		}
 
 		for (iNumElementos = 0; iNumElementos < icontapala-2; iNumElementos++)
 		{
