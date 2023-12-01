@@ -41,31 +41,41 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 			{
 				if (cauxpala[i]==',')
 				{
-					cauxpala[i] = '\0';
+					cauxpala[i] = ' ';
 				}
 				if (cauxpala[i]=='.')
 				{
-					cauxpala[i] = '\0';
+					cauxpala[i] = ' ';
 				}
 				if (cauxpala[i] == '-')
 				{
-					cauxpala[i] = '\0';
+					cauxpala[i] = ' ';
 				}
 				if (cauxpala[i] == '?')
 				{
-					cauxpala[i] = '\0';
+					cauxpala[i] = ' ';
 				}
 				if (cauxpala[i] == '=')
 				{
-					cauxpala[i] = '\0';
+					cauxpala[i] = ' ';
 				}
 				if (cauxpala[i] == '+')
 				{
-					cauxpala[i] = '\0';
+					cauxpala[i] = ' ';
 				}
 				if (cauxpala[i] == '!')
 				{
-					cauxpala[i] = '\0';
+					cauxpala[i] = ' ';
+				}
+			}
+
+			iconta = 0;
+			for (i = 0; i<strlen(cauxpala); i++)
+			{
+				while (cauxpala[iconta] != ' ')
+				{
+					szpalabras[i][iconta] = cauxpala[iconta];
+					iconta++;
 				}
 			}
 		}
