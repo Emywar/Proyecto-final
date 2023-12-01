@@ -1,0 +1,11 @@
+﻿  Corrector.cpp
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(31,76): warning C4101: 'isalta': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(31,52): warning C4101: 'icontaesta': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(31,25): warning C4101: 'iband': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(31,84): warning C4101: 'isig': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(31,6): warning C4101: 'i': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(31,64): warning C4101: 'icmp': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(31,32): warning C4101: 'iconta': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(185,30): warning C4101: 'szaux': unreferenced local variable
+C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\quisodecir\Corrector.cpp(400,40): warning C4101: 'szaux': unreferenced local variable
+  quisodecir.vcxproj -> C:\Users\EMMANUEL GUARNEROS\Documents\Escuela\CYP06\quisodecirAlumnos\Debug\quisodecir.exe
