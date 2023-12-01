@@ -111,6 +111,7 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 				}
 			}
 		}
+		
 		//Cierre
 		fclose(fpdic);//Cierre de archivo
 		
@@ -119,6 +120,14 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 		{
 			strcpy_s(szPalabras[iNumElementos], TAMTOKEN, szpalabras[iNumElementos]);
 			iEstadisticas[iNumElementos] = iestadisticas[iNumElementos];
+		}
+	}
+
+	else
+	{
+		if (fer)
+		{
+			printf("No lo pude abrir");
 		}
 	}
 }
