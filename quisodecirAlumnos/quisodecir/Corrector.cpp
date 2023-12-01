@@ -36,40 +36,37 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 		//Lectura
 		for (i2 = 0; !feof(fpdic); i2++)
 		{
-			//Escaneo de palabra szpalabras[i2][TAMTOKEN] == '\''
-			fscanf_s(fpdic, "%s", szpalabras[i2], TAMTOKEN);
-			iestadisticas[i2] = 1;
-			if (strcmp(szpalabras[i2], ":") == 0)
+			fgets(cauxpala, 4000, fpdic);
+			for (i = 0; i < strlen(cauxpala); i++)
 			{
-				i2--;
-			}
-			if (strcmp(szpalabras[i2], "'")==0)
-			{
-				i2--;
-			}
-			if (strcmp(szpalabras[i2], "...") == 0)
-			{
-				i2--;
-			}
-			if (strcmp(szpalabras[i2], "-") == 0)
-			{
-				i2--;
-			}
-			if (strcmp(szpalabras[i2], "?") == 0)
-			{
-				i2--;
-			}
-			if (strcmp(szpalabras[i2], "=") == 0)
-			{
-				i2--;
-			}
-			if (strcmp(szpalabras[i2], "+") == 0)
-			{
-				i2--;
-			}
-			if (strcmp(szpalabras[i2], "!") == 0)
-			{
-				i2--;
+				if (cauxpala[i]==',')
+				{
+					cauxpala[i] = '\0';
+				}
+				if (cauxpala[i]=='.')
+				{
+					cauxpala[i] = '\0';
+				}
+				if (cauxpala[i] == '-')
+				{
+					cauxpala[i] = '\0';
+				}
+				if (cauxpala[i] == '?')
+				{
+					cauxpala[i] = '\0';
+				}
+				if (cauxpala[i] == '=')
+				{
+					cauxpala[i] = '\0';
+				}
+				if (cauxpala[i] == '+')
+				{
+					cauxpala[i] = '\0';
+				}
+				if (cauxpala[i] == '!')
+				{
+					cauxpala[i] = '\0';
+				}
 			}
 		}
 		//Cierre
