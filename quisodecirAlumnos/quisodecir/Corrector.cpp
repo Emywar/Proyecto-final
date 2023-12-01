@@ -89,85 +89,30 @@ void	Diccionario			(char *szNombre, char szPalabras[NUMPALABRAS][TAMTOKEN], int 
 					}
 				}
 			}
+
+			//Burbujazo
+			for (icontapala = 0; icontapala < i2 - 1; icontapala++)
+			{
+				for (iauxletras = 0; iauxletras < i2 - 1; iauxletras++)
+				{
+					if (iauxletras < i2 - 2)
+					{
+						if ((strcmp(szpalabras[iauxletras], szpalabras[iauxletras + 1])) >= 1)
+						{
+							strcpy_s(cauxpala, TAMTOKEN, szpalabras[iauxletras]);
+							strcpy_s(szpalabras[iauxletras], TAMTOKEN, szpalabras[iauxletras + 1]);
+							strcpy_s(szpalabras[iauxletras + 1], TAMTOKEN, cauxpala);
+						}
+					}
+					if (iauxletras >= i2 - 2)
+					{
+						strcpy_s(szpalabras[iauxletras], TAMTOKEN, szpalabras[iauxletras + 1]);
+					}
+				}
+			}
 		}
 		//Cierre
 		fclose(fpdic);//Cierre de archivo
-		i2 = i2 - 2;
-		
-		//Eliminacion de caracteres especiales
-		for (icontapala = 0; icontapala<i2-1; icontapala++)
-		{
-			_strlwr_s(szpalabras[icontapala], TAMTOKEN);
-			ilon = strlen(szpalabras[icontapala]);
-			for (iletras = 0; iletras <= ilon; iletras++)
-			{
-				if (szpalabras[icontapala][iletras] == '(')
-				{
-					iauxletras = iletras;
-					while (szpalabras[icontapala][iletras] != '\0')
-					{
-						szpalabras[iletras][TAMTOKEN] = szpalabras[iletras + 1][TAMTOKEN];
-						iletras++;
-					}
-					iletras = iauxletras;
-					ilon--;
-				}
-				if (szpalabras[icontapala][iletras] == ')')
-				{
-					iauxletras = iletras;
-					while (szpalabras[icontapala][iletras] != '\0')
-					{
-						szpalabras[icontapala][iletras] = szpalabras[icontapala][iletras+ 1];
-						iletras++;
-					}
-					iletras = iauxletras;
-					ilon--;
-				}
-				if (szpalabras[icontapala][iletras] == ',')
-				{
-					iauxletras = iletras;
-					while (szpalabras[icontapala][iletras] != '\0')
-					{
-						szpalabras[icontapala][iletras] = szpalabras[icontapala][iletras + 1];
-						iletras++;
-					}
-					iletras = iauxletras;
-					ilon--;
-				}
-				if (szpalabras[icontapala][iletras] == '.')
-				{
-					iauxletras = iletras;
-					while (szpalabras[icontapala][iletras] != '\0')
-					{
-						szpalabras[icontapala][iletras] = szpalabras[icontapala][iletras + 1];
-						iletras++;
-					}
-					iletras = iauxletras;
-					ilon--;
-				}
-			}
-		}
-
-		//Burbujazo
-		for (icontapala = 0; icontapala < i2 - 1; icontapala++)
-		{
-			for (iauxletras = 0; iauxletras < i2 - 1; iauxletras++)
-			{
-				if (iauxletras<i2-2)
-				{
-					if ((strcmp(szpalabras[iauxletras], szpalabras[iauxletras + 1])) >= 1)
-					{
-						strcpy_s(cauxpala, TAMTOKEN, szpalabras[iauxletras]);
-						strcpy_s(szpalabras[iauxletras], TAMTOKEN, szpalabras[iauxletras + 1]);
-						strcpy_s(szpalabras[iauxletras + 1], TAMTOKEN, cauxpala);
-					}
-				}
-				if (iauxletras>=i2-2)
-				{
-					strcpy_s(szpalabras[iauxletras], TAMTOKEN, szpalabras[iauxletras + 1]);
-				}
-			}
-		}
 		
 		//Repeticion
 		for (icontapala = 0; icontapala <= i2; icontapala++)
@@ -450,10 +395,10 @@ void	ListaCandidatas(
 				{
 					szlisfin[iaux2][TAMTOKEN] = '\0';
 					szlisfin[iaux2 + 1][TAMTOKEN] = '\0';
-					//ipeso[iaux2 + 1] = 0;
+					ipeso[iaux2 + 1] = 0;
 					ipalabra--;
 				}
-				//iaux4--;
+				iaux4--;
 			}
 		}
 	}
